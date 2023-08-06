@@ -387,24 +387,6 @@ CreateThread(function()
 	end
 end)
 
---[[ CreateThread(function()
-	while true do
-		Wait(1000)
-		if IsPedInAnyVehicle(cache.ped) then
-		else
-			if started then
-				playerPed = cache.ped
-				CurrentVehicle = cache.vehicle
-				pause = true
-				started = false
-				TriggerEvent('qb-methcar:stop')
-				SetPedPropIndex(playerPed, 1, 0, 0, true)
-				FreezeEntityPosition(CurrentVehicle, false)
-			end
-		end
-	end
-end) ]]
-
 AddEventHandler('baseevents:leftVehicle', function()
 	if started then
 	  playerPed = cache.ped
