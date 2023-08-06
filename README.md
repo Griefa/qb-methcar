@@ -1,21 +1,33 @@
 # qb-methcar
 
+# Description
+
+Craft meth in a van anywhere in around Los Santos. As you are cooking, answer a questionaire. How you answer will dictate the quantity of meth you recieve after your cook. If you are not careful, some of your decisions could result in your meth lab exploding or even you being snitched on. [Questionaire Preview](https://i.imgur.com/WkRxIb9.png)
+
 # Doesn't include the shop ped featured in the preview video.
 
-- [Preview](https://www.youtube.com/watch?v=DxdVkQSX17I)
+- [Preview](https://www.youtube.com/watch?v=DxdVkQSX17I) (Old preview)
+
+## To do list
+    
+    • Add ps-dispatch support
+    • Better questionaire randomization
+    • Convert default notify to ox_lib notify
 
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
-- [qb-target](https://github.com/BerkieBb/qb-target)
-- [qb-inventory](https://github.com/qbcore-framework/qb-inventory) *or* as showcased in the video lj-inventory!
+- [ox_target](https://github.com/overextended/ox_target)
+- [ox_lib](https://github.com/overextended/ox_lib)
 
-Thanks for showing your personal interest in my work! 
-Please consider supporting ❤
+## Optional
+- [gfa-items](https://github.com/Griefa/gfa-items)
 
-🔗 > https://discord.gg/Tu94MCDDEa
-🔗 > https://samuels-development.dev/
+🔗 > [Samuel's Developments Discord](https://discord.gg/Tu94MCDDEa) (Original Creator)
+🔗 > [qb-methcar](https://github.com/Samuels-Development/qb-methcar) (Original Repo)
+🔗 > [Maliwan Developments Discord](https://discord.gg/9tqRdwsVpW) (Support Discord)
 
 ## Installation
+
 ### Manually
 1. Place the qb-methcar folder anywhere into your resources folder and ensure/start it in your server/resources.cfg
 
@@ -28,31 +40,33 @@ Please consider supporting ❤
   
 	["lithium"] 				 	 = {["name"] = "lithium", 			  			["label"] = "Lithium", 					["weight"] = 1000, 		["type"] = "item", 		["image"] = "lithium.png", 				["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Lithium, something you can make Meth with!"},
 
-3. Add the images contained in the file to your html/images of your respective inventory system!
+If you are using ox_inventory use these images:
 
-4. Go to your qb-target/init.lua and add this to your Config.GlobalVehicleOptions
 #
-```
-Config.GlobalVehicleOptions = {
-    options = {
-        {
-            type = 'client',
-            event = 'qb-methcar:cook',
-            icon = 'fas fa-blender',
-            label = 'Lets cook!',
-			canInteract = function(entity)
-                if GetVehicleEngineHealth(entity) <= 0 then return false end
-                	local model = GetEntityModel(entity)
-					local modelName = GetDisplayNameFromVehicleModel(model)
-					if modelName == 'JOURNEY' then
-                    return true
-                end
-                return false
-            end
-        },
-    },
-    distance = 2.0,
-}
-```
+    	['acetone'] = {
+		label = 'Acetone',
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "It is a colourless, highly volatile and flammable liquid with a characteristic pungent odour."
+	},
+    	['lithium'] = {
+		label = 'Lithium',
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "Lithium, something you can make Meth with!"
+	},
+    	['methlab'] = {
+		label = 'Portable Methlab',
+		weight = 5000,
+		stack = true,
+		close = false,
+		description = "A portable Meth Lab. marked for Police Seizure"
+	},
+
+
+
+3. You can find the images [here](https://github.com/Griefa/gfa-items)
 
 5. Done! :)
