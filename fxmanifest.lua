@@ -1,32 +1,8 @@
-shared_script '@WaveShield/resource/waveshield.lua' --this line was automatically written by WaveShield
-
- --this line was automatically written by WaveShield
-
- --this line was automatically written by WaveShield
-
- --this line was automatically written by WaveShield
-
- --this line was automatically written by WaveShield
-
- --this line was automatically written by WaveShield
-
- --this line was automatically written by WaveShield
-
- --this line was automatically written by WaveShield
-
- --this line was automatically written by WaveShield
-
- --this line was automatically written by WaveShield
-
- --this line was automatically written by WaveShield
-
---shared_script '@WaveShield/waveshield.lua' --this line was automatically written by WaveShield
-
 fx_version 'cerulean'
 game { 'gta5' }
 
 lua54 'yes'
-description 'qb-meth'
+description 'qb-methcar by Samuel, Edited by Griefa'
 version '1.0.0'
 
 shared_scripts {

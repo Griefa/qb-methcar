@@ -22,9 +22,11 @@ Craft meth in a van anywhere in around Los Santos. As you are cooking, answer a 
 ## Optional
 - [gfa-items](https://github.com/Griefa/gfa-items)
 
-🔗 > [Samuel's Developments Discord](https://discord.gg/Tu94MCDDEa) (Original Creator)
+🔗 > [Samuel's Developments](https://discord.gg/Tu94MCDDEa) (Original Creator)
+
 🔗 > [qb-methcar](https://github.com/Samuels-Development/qb-methcar) (Original Repo)
-🔗 > [Maliwan Developments Discord](https://discord.gg/9tqRdwsVpW) (Support Discord)
+
+🔗 > [Maliwan Developments](https://discord.gg/9tqRdwsVpW) (Support Discord)
 
 ## Installation
 
@@ -40,7 +42,7 @@ Craft meth in a van anywhere in around Los Santos. As you are cooking, answer a 
   
 	["lithium"] 				 	 = {["name"] = "lithium", 			  			["label"] = "Lithium", 					["weight"] = 1000, 		["type"] = "item", 		["image"] = "lithium.png", 				["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Lithium, something you can make Meth with!"},
 
-If you are using ox_inventory use these images:
+If you are using ox_inventory use these:
 
 #
     	['acetone'] = {
