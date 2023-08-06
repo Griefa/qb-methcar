@@ -22,6 +22,8 @@ Craft meth in a van anywhere in around Los Santos. As you are cooking, answer a 
 ## Optional
 - [gfa-items](https://github.com/Griefa/gfa-items)
 
+## Credits & Support
+
 🔗 > [Samuel's Developments](https://discord.gg/Tu94MCDDEa) (Original Creator)
 
 🔗 > [qb-methcar](https://github.com/Samuels-Development/qb-methcar) (Original Repo)
