@@ -15,11 +15,11 @@ AddEventHandler('qb-methcar:start', function()
 			Player.Functions.RemoveItem(Config.Lithium, Config.LithiumAmount, false)
 		else
 		TriggerClientEvent('qb-methcar:stop', _source)
-		TriggerClientEvent('QBCore:Notify', source, "You don't have enough ingredients to cook!", 'error')
+		TriggerClientEvent('ox_lib:notify', source, { type = 'error', description = 'You dont have enough ingredients to cook!' })
 		end
 	else
 	TriggerClientEvent('qb-methcar:stop', _source)
-	TriggerClientEvent('QBCore:Notify', source, "You're missing essential ingredients!", 'error')
+	TriggerClientEvent('ox_lib:notify', source, { type = 'error', description = 'Youre missing essential ingredients!' })
 	end
 end)
 
@@ -37,7 +37,7 @@ AddEventHandler('qb-methcar:make', function(posx,posy,posz)
 			TriggerClientEvent('qb-methcar:stop', _source)
 		end
 	else
-		TriggerClientEvent('QBCore:Notify', source, "You're missing a lab!", 'error')
+		TriggerClientEvent('ox_lib:notify', source, { type = 'error', description = 'Youre missing a lab!' })
 	end
 end)
 
