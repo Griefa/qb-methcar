@@ -10,13 +10,13 @@ AddEventHandler('qb-methcar:stop', function()
 	LastVehicle = QBCore.Functions.GetClosestVehicle()
 	started = false
 	progress = 0
-	QBCore.Functions.Notify("Production stopped...", "error")
+	lib.notify({description = 'Production stopped...', type = 'success'})
 	FreezeEntityPosition(LastVehicle, false)
 end)
 
 RegisterNetEvent('qb-methcar:notify')
 AddEventHandler('qb-methcar:notify', function(message)
-	QBCore.Functions.Notify(message)
+	lib.notify({description = (message), type = 'success'})
 end)
 
 RegisterNetEvent('qb-methcar:startprod')
@@ -25,7 +25,7 @@ AddEventHandler('qb-methcar:startprod', function()
 	started = true
 	pause = false
 	FreezeEntityPosition(CurrentVehicle, true)
-	QBCore.Functions.Notify("Production started", "success")
+	lib.notify({description = 'Production started', type = 'success'})
 end)
 
 RegisterNetEvent('qb-methcar:smoke')
@@ -95,7 +95,7 @@ end)
 
 RegisterNetEvent('qb-methcar:q-1police', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
-	QBCore.Functions.Notify(data.message, "error")
+	lib.notify({description = data.message, type = 'error'})		
 	quality = quality - 1
 	pause = false
 	TriggerServerEvent('police:server:policeAlert', 'Person reports stange smell!')
@@ -104,7 +104,7 @@ end)
 
 RegisterNetEvent('qb-methcar:q-1', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
-	QBCore.Functions.Notify(data.message, "error")
+	lib.notify({description = data.message, type = 'error'})
 	quality = quality - 1
 	pause = false
 	TriggerServerEvent('qb-methcar:make', pos.x,pos.y,pos.z)
@@ -112,7 +112,7 @@ end)
 
 RegisterNetEvent('qb-methcar:q-3', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
-	QBCore.Functions.Notify(data.message, "error")
+	lib.notify({description = data.message, type = 'error'})
 	quality = quality - 3
 	pause = false
 	TriggerServerEvent('qb-methcar:make', pos.x,pos.y,pos.z)
@@ -120,7 +120,7 @@ end)
 
 RegisterNetEvent('qb-methcar:q-5', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
-	QBCore.Functions.Notify(data.message, "error")
+	lib.notify({description = data.message, type = 'error'})	
 	quality = quality - 5
 	pause = false
 	TriggerServerEvent('qb-methcar:make', pos.x,pos.y,pos.z)
@@ -129,7 +129,7 @@ end)
 -------------------------------------------------------EVENTS POSITIVE
 RegisterNetEvent('qb-methcar:q2', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
-	QBCore.Functions.Notify(data.message, "success")
+	lib.notify({description = data.message, type = 'success'})	
 	quality = quality + 2
 	pause = false
 	TriggerServerEvent('qb-methcar:make', pos.x,pos.y,pos.z)
@@ -137,7 +137,7 @@ end)
 
 RegisterNetEvent('qb-methcar:q3', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
-	QBCore.Functions.Notify(data.message, "success")
+	lib.notify({description = data.message, type = 'success'})
 	quality = quality + 3
 	pause = false
 	TriggerServerEvent('qb-methcar:make', pos.x,pos.y,pos.z)
@@ -145,7 +145,7 @@ end)
 
 RegisterNetEvent('qb-methcar:q5', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
-	QBCore.Functions.Notify(data.message, "success")
+	lib.notify({description = data.message, type = 'success'})	
 	quality = quality + 5
 	pause = false
 	TriggerServerEvent('qb-methcar:make', pos.x,pos.y,pos.z)
@@ -153,7 +153,7 @@ end)
 
 RegisterNetEvent('qb-methcar:gasmask', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
-	QBCore.Functions.Notify(data.message, "success")
+	lib.notify({description = data.message, type = 'success'})	
 	SetPedPropIndex(playerPed, 1, 26, 7, true)
 	quality = quality + 2
 	pause = false
@@ -173,7 +173,7 @@ RegisterNetEvent('qb-methcar:cook', function()
 		Wait(1000)
 		quality = 0
 	else
-		QBCore.Functions.Notify('There is someone in your kitchen?!', "error")
+		lib.notify({description = 'There is someone in your kitchen', type = 'error'})	
 	end
 end)
 
@@ -379,7 +379,7 @@ CreateThread(function()
 				Citizen.Wait(250)
 				progress = progress +  1
 				quality = quality + 1
-				QBCore.Functions.Notify('Meth production: ' .. progress .. '%')
+				lib.notify({description = 'Meth production: ' .. progress .. '%', type = 'inform'})	
 				TriggerEvent('qb-methcar:proses')
 				Wait(2000)
 			end
